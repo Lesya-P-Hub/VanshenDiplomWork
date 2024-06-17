@@ -1,0 +1,80 @@
+﻿<Page x:Class="VanshenDiplomWork.Views.Pages.SearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VanshenDiplomWork.Views.Pages"
+      mc:Ignorable="d" 
+        d:DesignHeight="418" d:DesignWidth="900"
+  Background="#A9D19F"
+  Title="SearchPage">
+
+    <Grid>
+        <ListBox Grid.Row="3"
+             Name="ProductLb"
+             ScrollViewer.VerticalScrollBarVisibility="Disabled" SelectionChanged="ProductLb_SelectionChanged">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Width="200" Height="400" BorderBrush="Black" BorderThickness="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding Photo}" Grid.RowSpan="2" Stretch="UniformToFill"/>
+                            <Border Grid.Row="2">
+                                <TextBlock Text="{Binding Name}" FontSize="15" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"/>
+                            </Border>
+                            <Border Grid.Row="3">
+                                <TextBlock Text="{Binding Price}" FontSize="15" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Поиск по названию"/>
+                <TextBox Name="SearchTb"
+                     Height="30"
+                     Width="200" SelectionChanged="SearchTb_SelectionChanged" PreviewTextInput="SearchTb_PreviewTextInput"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical"
+                    Grid.Column="1">
+                <TextBlock Text="Поиск по тегу"/>
+                <ComboBox Name="TypeCmb"
+                      Height="30"
+                      Width="200" 
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="Id"
+                      SelectionChanged="TypeCmb_SelectionChanged"/>
+            </StackPanel>
+            <Button Grid.Column="2"
+                Content="Применить"
+                Name="FreshBtn"
+                Height="40"
+                 Width="200"
+                Click="FreshBtn_Click"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+    </Grid>
+</Page>

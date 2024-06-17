@@ -1,0 +1,66 @@
+﻿<Page x:Class="VanshenDiplomWork.Views.Pages.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VanshenDiplomWork.Views.Pages"
+      mc:Ignorable="d" 
+            d:DesignHeight="418" d:DesignWidth="900"
+ Background="#A9D19F"
+      Title="ProductPage">
+
+    <Grid>
+        <TextBlock Grid.Row="2"
+                   Text="Способ заварки:"/>
+        <TextBlock Grid.Row="3"
+               Text="{Binding Description}"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               TextWrapping="WrapWithOverflow"/>
+        <Grid Grid.Row="1">
+            <Image Source="{Binding Photo}"
+               Name="ArtImg"/>
+            <StackPanel Grid.Column="1"
+                        Orientation="Vertical">
+                <TextBlock 
+       Text="{Binding Name}"
+       HorizontalAlignment="Center" FontWeight="Bold"
+       FontStyle="Italic"
+       Name="NameTb"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Price}"
+HorizontalAlignment="Center" FontWeight="Bold"
+FontStyle="Italic"/>
+                    <TextBlock Text="₽"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <Button Grid.Column="2"
+                Name="BackBtn"
+                Content="Назад"
+                Height="40"
+                 Width="150" Click="BackBtn_Click"
+                />
+            <Button Grid.Column="3"
+                Name="AddBtn"
+                Content="В корзину"
+                Height="40"
+                 Width="150" Click="AddBtn_Click"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+    </Grid>
+
+</Page>

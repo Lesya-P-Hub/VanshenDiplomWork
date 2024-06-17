@@ -1,0 +1,24 @@
+﻿<Window x:Class="VanshenDiplomWork.Views.Windows.ResultWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VanshenDiplomWork.Views.Windows"
+        mc:Ignorable="d"
+                               Title="Тестирование" Height="600" Width="900"
+ResizeMode="NoResize"
+WindowStartupLocation="CenterScreen"
+Icon="\Recources\Icons\png-clipart-tea-company-food-coffee-farm-tea-leaf-logo.png"
+        Background="#A9D19F">
+    <Grid>
+        <TextBlock Text="dddd" HorizontalAlignment="Center" 
+                   FontWeight="Bold" FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Name="ResultTb"/>
+
+        <Button Margin="624,504,45,22" 
+                Name="EndBtn"
+                Click="EndBtn_Click"
+                Content="Завершить"/>
+    </Grid>
+</Window>

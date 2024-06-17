@@ -1,0 +1,19 @@
+﻿<Application x:Class="VanshenDiplomWork.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:VanshenDiplomWork"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary  Source="Styles\ButtonDictionary.xaml"/>
+                <ResourceDictionary  Source="Styles\ComboBoxDictionary.xaml"/>
+                <ResourceDictionary Source="Styles\DatePickerDictionary.xaml"/>
+                <ResourceDictionary Source="Styles\TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="Styles\TextBoxDictionary.xaml"/>
+                <ResourceDictionary Source="Styles\PasswordBoxDictionary.xaml"/>
+                <ResourceDictionary Source="Styles\ListBoxDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
